@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Today's joke</h1>
+    <% if(locals.joke && joke.error == false) { %> <% if(joke.type == "twopart")
+    { %>
+    <h1><%= joke.setup %></h1>
+    <h1><%= joke.delivery %></h1>
+    <% } else { %>
+    <h1><%= joke.joke %></h1>
+    <% } %> <% } else { %>
+    <p>Why don't you try refreshing the page or click the button below 👇</p>
+    <% } %>
+    <button><a href="/again">Get another joke</a></button>
+  </body>
+</html>
